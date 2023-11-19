@@ -17,11 +17,13 @@
     flex-direction: column;
 }
 .username{
-    font-weight: 500;
+    font-weight: bold;
+   
 }
 .userTitle{
     font-size: 12px;
     color: var(--textSoft);
+    font-weight: bold;
 }
 .list{
     list-style: none;

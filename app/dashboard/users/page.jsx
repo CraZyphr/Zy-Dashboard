@@ -31,7 +31,7 @@ const UsersPage = async () => {
               <td>
                 <div className={styles.user}>
                   <Image
-                    src= "/noavatar.png"
+                    src= "/noavatar.jpg"
                     width={40}
                     height={40}
                     className={styles.userImage}
@@ -45,7 +45,7 @@ const UsersPage = async () => {
               <td>Active</td>
               <td>
                 <div className={styles.buttons}>
-                  <Link href="/">
+                  <Link href="/dashboard/users/test">
                     <button className={`${styles.button} ${styles.view}`}>
                       View
                     </button>
