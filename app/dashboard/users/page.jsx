@@ -8,8 +8,8 @@ import Link from "next/link";
 const UsersPage = async ({searchParams}) => {
 
 const q = searchParams?.q || ""
-
-const users =await fetchUsers(q)
+const page = searchParams?.page || 1
+const {count,users} =await fetchUsers(q,page)
 console.log(users)
   return (
     <div className={styles.container}>
@@ -31,14 +31,13 @@ console.log(users)
           </tr>
         </thead>
         <tbody>
-          {users.map(user=>(
-
-          
+        {users.map((user) => (
             <tr key={user.id}>
               <td>
                 <div className={styles.user}>
                   <Image
-                    src= {user.img || "/noavatar1.png"}
+                    src={user.img || "/noavatar.png"}
+                    alt=""
                     width={40}
                     height={40}
                     className={styles.userImage}
@@ -66,7 +65,7 @@ console.log(users)
               ))}
         </tbody>
       </table>
-      <Pagination/>
+      <Pagination count ={count}/>
     </div>
   );
 };
